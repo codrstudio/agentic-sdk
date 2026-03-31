@@ -1,0 +1,43 @@
+{
+  "name": "@codrstudio/agentic-sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@ai-sdk/groq": "^3.0.31",
+    "@ai-sdk/mcp": "^1.0.22",
+    "@ai-sdk/openai-compatible": "^2",
+    "ai": "^6",
+    "fast-glob": "^3",
+    "js-tiktoken": "^1.0.21",
+    "zod": "^3"
+  },
+  "peerDependencies": {
+    "@opentelemetry/api": "^1"
+  },
+  "peerDependenciesMeta": {
+    "@opentelemetry/api": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:codrstudio/agentic-sdk.git"
+  },
+  "license": "MIT"
+}

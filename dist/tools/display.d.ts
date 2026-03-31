@@ -1,0 +1,21 @@
+export declare function createDisplayTools(): {
+    display_metric: import("ai").Tool<unknown, unknown>;
+    display_chart: import("ai").Tool<unknown, unknown>;
+    display_table: import("ai").Tool<unknown, unknown>;
+    display_progress: import("ai").Tool<unknown, unknown>;
+    display_product: import("ai").Tool<unknown, unknown>;
+    display_comparison: import("ai").Tool<unknown, unknown>;
+    display_price: import("ai").Tool<unknown, unknown>;
+    display_image: import("ai").Tool<unknown, unknown>;
+    display_gallery: import("ai").Tool<unknown, unknown>;
+    display_carousel: import("ai").Tool<unknown, unknown>;
+    display_sources: import("ai").Tool<unknown, unknown>;
+    display_link: import("ai").Tool<unknown, unknown>;
+    display_map: import("ai").Tool<unknown, unknown>;
+    display_file: import("ai").Tool<unknown, unknown>;
+    display_code: import("ai").Tool<unknown, unknown>;
+    display_spreadsheet: import("ai").Tool<unknown, unknown>;
+    display_steps: import("ai").Tool<unknown, unknown>;
+    display_alert: import("ai").Tool<unknown, unknown>;
+    display_choices: import("ai").Tool<unknown, unknown>;
+};
