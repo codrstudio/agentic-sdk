@@ -179,16 +179,18 @@ export declare const AgentRunOptionsSchema: z.ZodObject<{
         baseURL: z.ZodString;
         apiKey: z.ZodString;
     }, "strip", z.ZodTypeAny, {
-        baseURL: string;
         apiKey: string;
+        baseURL: string;
     }, {
-        baseURL: string;
         apiKey: string;
+        baseURL: string;
     }>>>;
+    contentParts: z.ZodOptional<z.ZodArray<z.ZodAny, "many">>;
 }, "strip", z.ZodTypeAny, {
+    apiKey: string;
     prompt: string;
     model: string;
-    apiKey: string;
+    provider?: string | undefined;
     system?: string | undefined;
     tools?: Record<string, any> | undefined;
     sessionId?: string | undefined;
@@ -197,12 +199,16 @@ export declare const AgentRunOptionsSchema: z.ZodObject<{
     maxTurns?: number | undefined;
     providerConfig?: Record<string, any> | undefined;
     messageMeta?: Record<string, unknown> | undefined;
-    provider?: string | undefined;
-    providers?: Record<string, { baseURL: string; apiKey: string }> | undefined;
+    providers?: Record<string, {
+        apiKey: string;
+        baseURL: string;
+    }> | undefined;
+    contentParts?: any[] | undefined;
 }, {
+    apiKey: string;
     prompt: string;
     model: string;
-    apiKey: string;
+    provider?: string | undefined;
     system?: string | undefined;
     tools?: Record<string, any> | undefined;
     sessionId?: string | undefined;
@@ -211,8 +217,11 @@ export declare const AgentRunOptionsSchema: z.ZodObject<{
     maxTurns?: number | undefined;
     providerConfig?: Record<string, any> | undefined;
     messageMeta?: Record<string, unknown> | undefined;
-    provider?: string | undefined;
-    providers?: Record<string, { baseURL: string; apiKey: string }> | undefined;
+    providers?: Record<string, {
+        apiKey: string;
+        baseURL: string;
+    }> | undefined;
+    contentParts?: any[] | undefined;
 }>;
 export type AgentEvent = z.infer<typeof AgentEventSchema>;
 export type UsageData = z.infer<typeof UsageDataSchema>;

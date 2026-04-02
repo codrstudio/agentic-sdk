@@ -15,7 +15,7 @@ export async function braveSearch(
     headers: { "X-Subscription-Token": apiKey },
   });
   if (!res.ok) return [];
-  const data = await res.json();
+  const data: any = await res.json();
   return (data.web?.results ?? []).slice(0, numResults).map((r: any) => ({
     title: r.title,
     url: r.url,

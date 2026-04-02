@@ -54,9 +54,9 @@ export async function loadSession(dir: string): Promise<ModelMessage[]> {
     for (const msg of messages) {
       if (Array.isArray(msg.content)) {
         const resolvedContent = await resolveRefs(msg.content, attachmentsDir);
-        result.push({ ...msg, content: resolvedContent as ModelMessage["content"] });
+        result.push({ ...msg, content: resolvedContent } as ModelMessage);
       } else {
-        result.push(msg);
+        result.push(msg as ModelMessage);
       }
     }
     return result;
@@ -66,7 +66,7 @@ export async function loadSession(dir: string): Promise<ModelMessage[]> {
 }
 
 export function filterOldMedia(messages: ModelMessage[], lastUserIndex: number): ModelMessage[] {
-  return messages.map((msg, i) => {
+  return (messages as any[]).map((msg: any, i: number) => {
     if (msg.role !== "user" || i === lastUserIndex) {
       return msg;
     }
